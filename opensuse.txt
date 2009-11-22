@@ -1,0 +1,38 @@
+How to rebuild packages on openSUSE 11.0
+========================================
+
+rpm = package manager (low-level)
+zypper = package manager (high-level), repository manager
+
+1) Register the source repositories with zypper
+
+$ sudo zypper addrepo -c http://download.opensuse.org/source/distribution/11.0/repo/oss/suse/ openSUSE-11.0-Oss-Source
+$ sudo zypper addrepo -c http://download.opensuse.org/source/distribution/11.0/repo/non-oss/suse/ openSUSE-11.0-Non-Oss-Source
+
+2) Fetch source packages
+
+$ sudo zypper source-install m4
+It installs   /usr/src/packages/SPECS/m4.spec
+              /usr/src/packages/SOURCES/m4-1.4.11*
+
+3) Build the RPM from source
+http://perso.b2b2c.ca/sarrazip/dev/rpm-building-crash-course.html
+http://postfix.state-of-mind.de/patrick.koetter/smtpauth/building_RPMS_from_SRPMS.html
+http://www.rpm.org/max-rpm/
+
+$ rpmbuild -bc /usr/src/packages/SPECS/m4.spec
+
+Builds in /usr/src/packages/BUILD/
+
+You can make changes.
+
+Then: "sudo make install".
+
+
+
+
+There is also a debug repo:
+http://download.opensuse.org/debug/distribution/11.0/repo/oss/
+debuginfo - just debug information
+debugsource - just sources referenced by debug information
+both installs into /usr/src/debug/, no Makefiles => not useful.
