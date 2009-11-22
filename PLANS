@@ -1,0 +1,16 @@
+Ideas for progress:
+
+Step 1: Set up instructions for users to apply if they want to modify
+a source package from their distribution. Like a HOWTO.
+
+Step 2: Create a shell scripts that will download a package and build
+it, to the point where modifying the source code and doing "make install"
+is possible. This script should have a distribution-agnostic human
+interface.
+
+Step 3: Create ready-made buildballs for a couple of common distributions
+and make them available for download.
+
+Step 4: Standardize the format of these buildball download sites and
+convince distributors to provide them themselves.
+

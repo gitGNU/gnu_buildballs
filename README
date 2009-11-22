@@ -1,0 +1,13 @@
+The BuildBalls project will make it easier for end users of common
+distributions to create, test, and install modifications of packages.
+In the beginning, it might only provide documentation of how to do this.
+Later, it might distribute tarballs of build trees, where changing the
+source code and doing "make install" is possible.
+
+For packages that are standalone programs with few dependencies, few
+configuration options, and few distributor patches, the user can
+download the source code and build it for himself. But for the majority
+of packages (think of Qt, X11, Firefox, VLC), it is hardly practical
+any more. Yet, software development speed and quality depend on users
+contributing to it.
+
